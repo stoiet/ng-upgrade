@@ -1,0 +1,13 @@
+<div class="btn-group" ng-class="{ open: $ctrl.isOpen }">
+    <button type="button" class="btn btn-default dropdown-toggle" ng-click="$ctrl.handleOpenStateChange()">
+        {{ $ctrl.selectedOption ? $ctrl.selectedOption : $ctrl.placeholder }} <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a ng-click="$ctrl.handleOptionSelect()">{{ $ctrl.placeholder }}</a></li>
+        <li ng-repeat="option in $ctrl.options">
+            <a ng-click="$ctrl.handleOptionSelect(option)">
+                {{ option }}
+            </a>
+        </li>
+    </ul>
+</div>
